@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Linus Hvenfelt\\Documents\\GitHub\\C#\\moment2\\moment2.csproj": {}
+    "C:\\Users\\Linus\\Documents\\GitHub\\DT173G_moment2\\DT071G_moment2\\moment2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Linus Hvenfelt\\Documents\\GitHub\\C#\\moment2\\moment2.csproj": {
+    "C:\\Users\\Linus\\Documents\\GitHub\\DT173G_moment2\\DT071G_moment2\\moment2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Linus Hvenfelt\\Documents\\GitHub\\C#\\moment2\\moment2.csproj",
+        "projectUniqueName": "C:\\Users\\Linus\\Documents\\GitHub\\DT173G_moment2\\DT071G_moment2\\moment2.csproj",
         "projectName": "moment2",
-        "projectPath": "C:\\Users\\Linus Hvenfelt\\Documents\\GitHub\\C#\\moment2\\moment2.csproj",
-        "packagesPath": "C:\\Users\\Linus Hvenfelt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Linus Hvenfelt\\Documents\\GitHub\\C#\\moment2\\obj\\",
+        "projectPath": "C:\\Users\\Linus\\Documents\\GitHub\\DT173G_moment2\\DT071G_moment2\\moment2.csproj",
+        "packagesPath": "C:\\Users\\Linus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Linus\\Documents\\GitHub\\DT173G_moment2\\DT071G_moment2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Linus Hvenfelt\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Linus\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

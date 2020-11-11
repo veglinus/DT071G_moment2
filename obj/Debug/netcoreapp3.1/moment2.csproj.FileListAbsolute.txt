@@ -11,3 +11,16 @@ C:\Users\Linus Hvenfelt\Documents\GitHub\C#\moment2\obj\Debug\netcoreapp3.1\mome
 C:\Users\Linus Hvenfelt\Documents\GitHub\C#\moment2\obj\Debug\netcoreapp3.1\moment2.dll
 C:\Users\Linus Hvenfelt\Documents\GitHub\C#\moment2\obj\Debug\netcoreapp3.1\moment2.pdb
 C:\Users\Linus Hvenfelt\Documents\GitHub\C#\moment2\obj\Debug\netcoreapp3.1\moment2.genruntimeconfig.cache
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\bin\Debug\netcoreapp3.1\moment2.exe
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\bin\Debug\netcoreapp3.1\moment2.deps.json
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\bin\Debug\netcoreapp3.1\moment2.runtimeconfig.json
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\bin\Debug\netcoreapp3.1\moment2.runtimeconfig.dev.json
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\bin\Debug\netcoreapp3.1\moment2.dll
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\bin\Debug\netcoreapp3.1\moment2.pdb
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\obj\Debug\netcoreapp3.1\moment2.csprojAssemblyReference.cache
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\obj\Debug\netcoreapp3.1\moment2.AssemblyInfoInputs.cache
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\obj\Debug\netcoreapp3.1\moment2.AssemblyInfo.cs
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\obj\Debug\netcoreapp3.1\moment2.csproj.CoreCompileInputs.cache
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\obj\Debug\netcoreapp3.1\moment2.dll
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\obj\Debug\netcoreapp3.1\moment2.pdb
+C:\Users\Linus\Documents\GitHub\DT173G_moment2\DT071G_moment2\obj\Debug\netcoreapp3.1\moment2.genruntimeconfig.cache
