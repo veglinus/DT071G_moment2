@@ -15,17 +15,54 @@ namespace moment2
             // dotnet run
             Console.Clear();
             Console.WriteLine("Let's find out what weekday you were born!");
-            Console.WriteLine("\nWhat is your DOB? Example: 1998-02-09");
+            Console.WriteLine("\nWhat is your date of birth? Example: 1998-02-09");
             var dob = Console.ReadLine();
             Filterme(dob);
 
             void Filterme(string data) {
-                if (data.Length != 10) {
+                try
+                {
+                    DateTime dDob;
+                    if (!DateTime.TryParse(data, out dDob) || data.Length != 10) { // Test if it compiles to DateTime & checks length
+                        Console.Clear();
+                        Console.WriteLine("\n Bad input. Did you write it the correct way? Example: 1995-05-15");
+                        Filterme(Console.ReadLine());
+                    } else {
+                        
+                    string[] dobs = data.Split("-");
+                    var c = Int32.Parse(data.Substring(0, 2)); // 19
+                    var k = Int32.Parse(data.Substring(2, 2)); // 98
+                    var y = Int32.Parse(dobs[0]); // 1998
+                    var m = Int32.Parse(dobs[1]); // 02
+                    var d = Int32.Parse(dobs[2]); // 09
+
+                        if (m > 12 || m == 0) {
+                            Console.Clear();
+                            Console.WriteLine("\n Bad input. The month is wrong. Example: 1995-05-15");
+                            Filterme(Console.ReadLine());
+                        } else if (d > 31 || d == 0) {
+                            Console.Clear();
+                            Console.WriteLine("\n Bad input. The day is wrong. Example: 1995-05-15");
+                            Filterme(Console.ReadLine());
+                        } else if (dobs[0].Length != 4) {
+                            Console.Clear();
+                            Console.WriteLine("\n Bad input. Write out the entire year. Example: 1995-05-15");
+                            Filterme(Console.ReadLine());
+                        } else if (dobs[1].Length != 2 || dobs[2].Length != 2) {
+                            Console.Clear();
+                            Console.WriteLine("\n Bad input. Write out the entire month/day with 2 letters. Example: 1995-05-15");
+                            Filterme(Console.ReadLine());
+                        } else {
+                            task(data);
+                        }
+                    }
+
+                }
+                catch (System.Exception)
+                { // In case of exception, just try again
                     Console.Clear();
                     Console.WriteLine("\n Bad input. Did you write it the correct way? Example: 1995-05-15");
                     Filterme(Console.ReadLine());
-                } else {
-                    task(data);
                 }
             }
 
@@ -40,12 +77,8 @@ namespace moment2
                 var m = Int32.Parse(dobs[1]); // 02
                 var d = Int32.Parse(dobs[2]); // 09
 
-                // TODO: Check if string is 10 or 8 characters long
-                // Check if year is 
-                // Check if month =< 12 
-
                 if (m < 3) { // If M is 1 or 2
-                    m = m + 12; // add 12 to M
+                    m += 12; // add 12 to M
                     y--; // and subtract 1 from Y.
                 }
 
