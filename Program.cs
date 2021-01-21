@@ -16,19 +16,19 @@ namespace moment2
             Console.Clear();
             Console.WriteLine("Let's find out what weekday you were born!");
             Console.WriteLine("\nWhat is your date of birth? Example: 1998-02-09");
-            var dob = Console.ReadLine();
-            Filterme(dob);
+            var userInput = Console.ReadLine();
+            Filter(userInput);
 
-            void Filterme(string data)
+            void Filter(string data)
             {
                 try
                 {
-                    DateTime dDob;
-                    if (!DateTime.TryParse(data, out dDob) || data.Length != 10)
+                    DateTime dateTime;
+                    if (!DateTime.TryParse(data, out dateTime) || data.Length != 10)
                     { // Test if it compiles to DateTime & checks length
                         Console.Clear();
                         Console.WriteLine("\n Bad input. Did you write it the correct way? Example: 1995-05-15");
-                        Filterme(Console.ReadLine());
+                        Filter(Console.ReadLine());
                     }
                     else
                     {
@@ -36,33 +36,33 @@ namespace moment2
                         string[] dobs = data.Split("-");
                         var c = Int32.Parse(data.Substring(0, 2)); // 19
                         var k = Int32.Parse(data.Substring(2, 2)); // 98
-                        var y = Int32.Parse(dobs[0]); // 1998
-                        var m = Int32.Parse(dobs[1]); // 02
-                        var d = Int32.Parse(dobs[2]); // 09
+                        var year = Int32.Parse(dobs[0]); // 1998
+                        var month = Int32.Parse(dobs[1]); // 02
+                        var day = Int32.Parse(dobs[2]); // 09
 
-                        if (m > 12 || m == 0)
+                        if (month > 12 || month == 0)
                         {
                             Console.Clear();
                             Console.WriteLine("\n Bad input. The month is wrong. Example: 1995-05-15");
-                            Filterme(Console.ReadLine());
+                            Filter(Console.ReadLine());
                         }
-                        else if (d > 31 || d == 0)
+                        else if (day > 31 || day == 0)
                         {
                             Console.Clear();
                             Console.WriteLine("\n Bad input. The day is wrong. Example: 1995-05-15");
-                            Filterme(Console.ReadLine());
+                            Filter(Console.ReadLine());
                         }
                         else if (dobs[0].Length != 4)
                         {
                             Console.Clear();
                             Console.WriteLine("\n Bad input. Write out the entire year. Example: 1995-05-15");
-                            Filterme(Console.ReadLine());
+                            Filter(Console.ReadLine());
                         }
                         else if (dobs[1].Length != 2 || dobs[2].Length != 2)
                         {
                             Console.Clear();
                             Console.WriteLine("\n Bad input. Write out the entire month/day with 2 letters. Example: 1995-05-15");
-                            Filterme(Console.ReadLine());
+                            Filter(Console.ReadLine());
                         }
                         else
                         {
@@ -75,74 +75,81 @@ namespace moment2
                 { // In case of exception, just try again
                     Console.Clear();
                     Console.WriteLine("\n Bad input. Did you write it the correct way? Example: 1995-05-15");
-                    Filterme(Console.ReadLine());
+                    Filter(Console.ReadLine());
                 }
             }
 
-            void task(string dob)
+            void task(string dateOfBirth)
             {
                 try
                 {
-                    string[] dobs = dob.Split("-");
+                    string[] dateOfBirthArray = dateOfBirth.Split("-");
 
                     // If date is 1998-02-09, these variables show the following:
-                    var c = Int32.Parse(dob.Substring(0, 2)); // 19
-                    var k = Int32.Parse(dob.Substring(2, 2)); // 98
-                    var y = Int32.Parse(dobs[0]); // 1998
-                    var m = Int32.Parse(dobs[1]); // 02
-                    var d = Int32.Parse(dobs[2]); // 09
+                    var year = Int32.Parse(dateOfBirthArray[0]); // 1998
+                    var month = Int32.Parse(dateOfBirthArray[1]); // 02
+                    var day = Int32.Parse(dateOfBirthArray[2]); // 09
 
-                    if (m < 3)
+                    if (month < 3)
                     { // If M is 1 or 2
-                        m += 12; // add 12 to M
-                        y--; // and subtract 1 from Y.
+                        month += 12; // add 12 to M
+                        year--; // and subtract 1 from Y.
                     }
 
-                    var result1 = Math.Floor(2.6 * m - 5.39); // Add together the integer parts of (2.6M—5.39)
+                    var c = Math.Floor((double)year / 100); // Two first digits of year
+                    var k = year - (100 * c); // Two last digits of year
+
+                    var result1 = Math.Floor(2.6 * month - 5.39); // Add together the integer parts of (2.6M—5.39)
                     var result2 = Math.Floor((double)k / 4); // k/4
                     var result3 = Math.Floor((double)c / 4); // and c/4
 
-                    double summa = (result1 + result2 + result3 + d + k) - 2 * c; // Add to this D and K, and subtract 2C. 
-                                                                                  //Console.WriteLine($"\nSumman är är: {summa}");
-                    double veckodag = summa % 7; // Find the remainder when this number is divided by 7
-                                                 //Console.WriteLine($"\nVeckodagen är: {veckodag}");
+                    result1 = Convert.ToInt32(result1); // Converts double to int, removing the decimals
+                    result2 = Convert.ToInt32(result2);
+                    result3 = Convert.ToInt32(result3);
 
-                    string veckodagen = "";
-                    switch (veckodag)
+                    double sum = (result1 + result2 + result3 + day + k) - (2 * c); // Add to this D and K, and subtract 2C. 
+                    //Console.WriteLine($"\nSumman är är: {summa}");
+
+                    Console.WriteLine(sum);
+                    double weekday = sum - (7 * Math.Floor(sum / 7)); // Find the remainder when this number is divided by 7
+                    //Console.WriteLine($"\nVeckodagen är: {veckodag}");
+
+                    string weekdayOutput = "";
+                    switch (weekday)
                     {
                         case 1:
-                            veckodagen = "monday";
+                            weekdayOutput = "monday";
                             break;
 
                         case 2:
-                            veckodagen = "tuesday";
+                            weekdayOutput = "tuesday";
                             break;
 
                         case 3:
-                            veckodagen = "wednesday";
+                            weekdayOutput = "wednesday";
                             break;
 
                         case 4:
-                            veckodagen = "thursday";
+                            weekdayOutput = "thursday";
                             break;
 
                         case 5:
-                            veckodagen = "friday";
+                            weekdayOutput = "friday";
                             break;
 
                         case 6:
-                            veckodagen = "saturday";
+                            weekdayOutput = "saturday";
                             break;
 
                         case 0:
-                            veckodagen = "sunday";
+                            weekdayOutput = "sunday";
                             break;
 
                         default:
                             break;
                     }
 
-                    Console.WriteLine($"\nYou were born on a {veckodagen}!");
+                    Console.WriteLine($"\nYou were born on a {weekdayOutput}!");
                     Console.Write("\nPress any key to exit...");
                     Console.ReadKey(true);
 
