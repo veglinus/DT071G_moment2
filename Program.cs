@@ -110,7 +110,7 @@ namespace moment2
                     double sum = (result1 + result2 + result3 + day + k) - (2 * c); // Add to this D and K, and subtract 2C. 
                     //Console.WriteLine($"\nSumman är är: {summa}");
 
-                    Console.WriteLine(sum);
+                    //Console.WriteLine(sum);
                     double weekday = sum - (7 * Math.Floor(sum / 7)); // Find the remainder when this number is divided by 7
                     //Console.WriteLine($"\nVeckodagen är: {veckodag}");
 
